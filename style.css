@@ -2,16 +2,125 @@ html, body{
     height: 100vh;
     width : 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: rgb(78, 78, 78);
+    margin:0;
+    padding: 0;
+    gap: 30px;
 }
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+body .ones{
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    font-size: 100px;
+    justify-content: center;
+}
+
 
 .calculator{
 
     display: flex;
     flex-direction: column;
-    width: 40%;
-    height: 60%;
-
-
+    width: 500px;
+    aspect-ratio: 1/1.3333;
+    border: 3px black solid;
+    border-radius: 3%;
+    background-color: rgb(141, 141, 141);
+    padding: 20px;
+   
 }
+
+.viewport{
+    height: 20%;
+    border: 2px black solid; 
+    background-color:rgb(197, 197, 197);
+    margin-bottom: 8px;
+    border-radius: 9px;
+    
+    
+}
+
+.input{
+    display: grid;
+    height: 80%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    grid-gap: 8px;
+ 
+}
+
+.equal{
+    
+    background-color: rgb(26, 163, 14);
+}
+
+button{
+    
+    font-size: xx-large;
+    font-weight:500;
+    width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 10%;
+    border: 2px solid black;
+    background-color: rgb(197, 197, 197);
+    
+}
+
+
+.C{
+    color: red;
+}
+
+.perc,.divide,.multiply,.add,.subtract{
+    color: rgb(26, 163, 14);
+}
+
+
+.B{
+    color: rgb(129, 44, 129);
+}
+
+button:hover{
+    transform: scale(1.03);
+}
+
+.C:active{
+    background-color: rgba(255, 0, 0, 0.200); 
+    box-shadow: 0 5px #666;
+    transform: scale(0.99);
+}
+
+.B:active{
+    background-color: rgba(128, 0, 128, 0.200); 
+    box-shadow: 0 5px #666;
+    transform: scale(0.99);
+}
+
+.perc:active,.divide:active,.multiply:active,.subtract:active,.add:active{
+    background-color: rgba(81, 173, 73, 0.20);
+    box-shadow: 0 5px #666;
+    transform: scale(0.99);
+}
+
+button:active:not(.C,.B){
+    
+    box-shadow: 0 5px #666;
+    transform: scale(0.99);
+  
+}
+.equal:active{
+    box-shadow: 0 5px #666;
+    transform: scale(0.99);
+}
+
+
+
