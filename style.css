@@ -36,13 +36,30 @@ body .ones{
 }
 
 .viewport{
+    display: flex;
+    flex-direction: column;
     height: 20%;
     border: 2px black solid; 
     background-color:rgb(197, 197, 197);
     margin-bottom: 8px;
     border-radius: 9px;
-    
-    
+       
+}
+
+.viewport .top{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    height: 50%;
+    padding: 10px;
+}
+
+.viewport .bottom{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 50%;
+    padding: 10px;
 }
 
 .input{

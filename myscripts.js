@@ -1,21 +1,27 @@
-numbers = document.querySelectorAll('.one,.two,.three,.four,.five,.six,.seven,.eight,.nine');
+numbers = document.querySelectorAll('.zero,.one,.two,.three,.four,.five,.six,.seven,.eight,.nine');
 operators = document.querySelectorAll('.add,.subtract,.multiply,.divide,.perc');
 clear = document.querySelector('.C');
 backspace = document.querySelector('.B');
+output = document.querySelector('.viewport .top');
 
-userNum1 = [];
-userNum2 = [];
+
+
+
+let userInput = [];
+let storedNumber = [];
+let answer = [];
 
 numbers.forEach(element => {
     
     element.addEventListener('click',()=>{
-        
-        userNum1.push('element.textcontent');
-        userNum1 = userNum1.join('');
+        let a = Number(element.textContent);
+        userInput.push(a);
+        userInput= [Number(userInput.join(''))];
+        console.log(a,userInput);
+        output.textContent = userInput;
     })
 });
 
-console.log(userNum1);
 
 
 
