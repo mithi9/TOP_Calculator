@@ -52,6 +52,7 @@ body .ones{
     align-items: flex-start;
     height: 50%;
     padding: 10px;
+    font-size: x-large;
 }
 
 .viewport .bottom{
@@ -60,6 +61,7 @@ body .ones{
     align-items: flex-end;
     height: 50%;
     padding: 10px;
+    font-size: x-large;
 }
 
 .input{
