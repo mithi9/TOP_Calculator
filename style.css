@@ -82,7 +82,7 @@ body .ones{
     background-color: rgb(26, 163, 14);
 }
 
-button{
+button:not(.C){
     
     font-size: xx-large;
     font-weight:500;
@@ -97,9 +97,17 @@ button{
 
 .C{
     color: red;
+    grid-column: 1/ span 2;
+    height: 100%;
+    width: 90%;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: rgb(197, 197, 197);
+    font-size: xx-large;
+    font-weight:500;
 }
 
-.perc,.divide,.multiply,.add,.subtract{
+.divide,.multiply,.add,.subtract{
     color: rgb(26, 163, 14);
 }
 
