@@ -5,6 +5,8 @@ clear = document.querySelector('.C');
 backspace = document.querySelector('.B');
 outputWindow = document.querySelector('.viewport .top');
 answerWindow = document.querySelector('.viewport .bottom');
+toggle = document.querySelector('.toggle');
+decimal = document.querySelector('.point');
 
 
 let userSelection = {
@@ -38,6 +40,7 @@ numbers.forEach(element => {
             userSelection.userInput2 = [];
             userSelection.userOperation = [];
             answerWindow.textContent = ``;
+            toggleState = 0;
             display();
         }
       
@@ -57,6 +60,8 @@ numbers.forEach(element => {
         userSelection.userInput2.push(a);
         //userSelection.userInput2= [Number(userSelection.userInput2.join(''))];
         console.log(userSelection.userInput2);   
+        toggleState = 0;
+        decimalState = 0;
 
         }
 
@@ -101,6 +106,7 @@ operators.forEach(element =>{
         }
 
         display();
+        eventState = 3;
       
 
     })
@@ -148,7 +154,10 @@ backspace.addEventListener('click',()=>{
 
     if(eventState === 1){
         
-        userSelection.userInput1.pop();
+        if( userSelection.userInput1.length === 0){
+            toggleState = 0;
+            decimalState = 0;
+        }
     }
     else if(eventState === 2){
         
@@ -163,7 +172,71 @@ backspace.addEventListener('click',()=>{
         userSelection.userInput2.pop();
         if( userSelection.userInput2.length === 0){
             eventState = 2;
+            toggleState = 0;
+            decimalState = 0;
         }
+    }
+
+    display();
+
+});
+
+
+
+let decimalState = 0;
+decimal.addEventListener('click',()=>{
+
+    console.log(userSelection.userInput1);
+    if(eventState === 1){
+
+        if(decimalState === 0){
+            userSelection.userInput1.push(".");
+            decimalState = 1;
+        }
+    }
+
+    else if(eventState === 3){
+
+        if(decimalState === 0){
+            userSelection.userInput2.push(".");
+            decimalState = 1;
+        }
+    }
+
+    display();
+
+});
+
+
+
+let toggleState = 0;
+toggle.addEventListener('click',()=>{
+
+    console.log(userSelection.userInput1);
+    if(eventState === 1){
+
+        if(toggleState === 1){
+            userSelection.userInput1.shift();
+            console.log(userSelection.userInput1);
+            toggleState = 0;
+        }
+        else{
+            userSelection.userInput1.unshift("-");
+            toggleState = 1;
+        }
+    }
+
+    else if(eventState === 3){
+
+        if(toggleState === 1){
+            userSelection.userInput2.shift();
+            toggleState = 0;
+        }
+        else{
+            userSelection.userInput2.unshift("-");
+            toggleState = 1;
+        }
+
     }
 
     display();
@@ -253,6 +326,7 @@ function compute(a=[],b=[],c=[]){
     }
 
         answerState = 1;
+        toggleState = 0;
         return [userSelection.answer];
 
 }
